@@ -1,9 +1,12 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Text.Json.Serialization;
+
+//using System.Text.Json.Serialization;
 using static System.Net.Mime.MediaTypeNames;
 namespace API_TEST.Models
 {/// <summary>
@@ -48,7 +51,7 @@ namespace API_TEST.Models
         /// <summary>
         /// select image type        0 = Main Image, 1= Secondary Image
         /// </summary>
-        [JsonConverter(typeof(JsonStringEnumConverter))]
+        [Newtonsoft.Json.JsonConverter(typeof(JsonStringEnumConverter))]
         [Description("Select Image Type")]
         [Required]
         public ImageType imageType { get; set; }
